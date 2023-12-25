@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "injkt"
+version = "0.1.0"
+description = "Dependency ~~injection~~ injektion"
+authors = ["CaffeineDuck <hello@samrid.me>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
