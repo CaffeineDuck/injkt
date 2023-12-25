@@ -28,8 +28,6 @@ def inject_args_deps(func: ty.Callable[P, T]) -> ty.Callable[P, T]:
         *args: P.args,
         **kwargs: P.kwargs,
     ) -> T:
-        injktor = Injktor()
-
         sig = inspect.signature(func)
         defaults = {
             name: param.default
@@ -40,7 +38,7 @@ def inject_args_deps(func: ty.Callable[P, T]) -> ty.Callable[P, T]:
         for arg_name, arg in defaults.items():
             if not isinstance(arg, Injectable):
                 continue
-            impl_cls = injktor.get(arg.__injection__)
+            impl_cls = Injktor().get(arg.__injection__)
             kwargs[arg_name] = impl_cls
 
         return func(*args, **kwargs)
