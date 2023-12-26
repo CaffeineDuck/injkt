@@ -18,7 +18,7 @@ class InterfaceNotFound(Exception):
         super().__init__(f"Interface {interface} not found.")
 
 
-class AlwaysReinitNotCallable(Exception):
+class AlwaysReinitNotCallable(TypeError):
     def __init__(self, implementation: type) -> None:
         self.implementation = implementation
         super().__init__(f"Implementation {implementation} is not callable.")
