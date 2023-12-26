@@ -5,6 +5,14 @@ description = "Dependency ~~injection~~ injktion"
 authors = ["CaffeineDuck <hello@samrid.me>"]
 license = "MIT"
 readme = "README.md"
+repository = "https://github.com/caffeineduck/injkt"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+packages = [{ include = "injkt" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -12,6 +20,10 @@ python = "^3.10"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.13.2"
+black = "^23.12.1"
+
+[tool.isort]
+profile = "black"
 
 [build-system]
 requires = ["poetry-core"]
