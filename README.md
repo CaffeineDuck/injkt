@@ -15,12 +15,13 @@ Good question.
 ## How?
 
 ```python
-import typing as ty
+from abc import ABC, abstractmethod
 
 from injkt import Bind, Config, Injectable, Injktor, inject_args_deps
 
 
-class IMailService(ty.Protocol):
+class IMailService(ABC):
+    @abstractmethod
     def send_mail(self, subject: str, to: str) -> None:
         ...
 
