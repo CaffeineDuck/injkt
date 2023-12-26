@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "injkt"
 version = "0.1.0"
-description = "Dependency ~~injection~~ injektion"
+description = "Dependency ~~injection~~ injktion"
 authors = ["CaffeineDuck <hello@samrid.me>"]
 license = "MIT"
 readme = "README.md"
