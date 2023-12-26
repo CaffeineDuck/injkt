@@ -12,3 +12,8 @@ class Bind:
 
     def __hash__(self) -> int:
         return hash(self.interface)
+
+    def __eq__(self, other: ty.Any) -> bool:
+        if not isinstance(other, Bind):
+            return False
+        return self.interface == other.interface
