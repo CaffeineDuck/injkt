@@ -7,11 +7,7 @@ from .injktor import Injktor
 
 __all__ = ("inject_attr_deps", "inject_args_deps")
 
-T = ty.TypeVar("T")
-P = ty.ParamSpec("P")
-
-
-def inject_attr_deps(cls_: T) -> T:
+def inject_attr_deps[T](cls_: T) -> T:
     injktor = Injktor()
     for attr_name in dir(cls_):
         attr = getattr(cls_, attr_name)
@@ -22,7 +18,7 @@ def inject_attr_deps(cls_: T) -> T:
     return cls_
 
 
-def inject_args_deps(func: ty.Callable[P, T]) -> ty.Callable[P, T]:
+def inject_args_deps[T, **P](func: ty.Callable[P, T]) -> ty.Callable[P, T]:
     @wraps(func)
     def wrapper(
         *args: P.args,
