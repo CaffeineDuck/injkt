@@ -16,7 +16,7 @@ class Injectable(ty.Generic[T]):
 
         self = super().__new__(cls)
         self.__injection__ = injection_class
-        return self  # type: ignore
+        return ty.cast(T, self)
 
     def __getattr__(self, _: str) -> None:
         raise DIConfigurationError()
